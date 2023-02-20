@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.header {
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.nav-link {
+    font-size: 1.5rem;
+}
+.nav .botn {
+    background-color: #000;
+}
+.img-logo {
+    width: 80px;
+}
+.cards {
+    gap: 20px;
+}
+
+@media(max-width:600px) {
+ .cards {
+    flex-direction: column;
+    width: 100vw;
+    gap: 5px;
+ }   
+}
