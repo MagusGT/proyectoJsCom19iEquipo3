@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
+    <!-- Encabezado página principal -->
     <header class="container-fluid header">
+      <!-- Navbar con logo, enlaces inicio, acreca de, y productos. Tambien los botones con login, registro y carrito de compras -->
       <nav class="navbar navbar-expand-md navbar-dark shadow-md">
         <div class="container">
           <a class="navbar-brand" href="#"
@@ -77,8 +79,16 @@
               >
                 Inciar seción
               </button>
-              <button class="btn btn-outline-light" type="button">
+              <button class="btn btn-outline-light me-3" type="button">
                 Suscribirse
+              </button>
+              <button
+                class="btn btn-outline-warning btn-carrito"
+                data-bs-toggle="modal"
+                data-bs-target="#carritoCompras"
+                type="button"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </form>
           </div>
@@ -130,6 +140,39 @@
               data-bs-dismiss="modal"
             >
               Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal me-0" id="carritoCompras">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title">Carrito de compras</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Productos a cargar.</p>
+          </div>
+          <div class="modal-body">
+            <p>Total de productos.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Continuar con la compra
             </button>
           </div>
         </div>
@@ -243,5 +286,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/login.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b9fc303ebe.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

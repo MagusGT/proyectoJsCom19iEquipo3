@@ -34,6 +34,9 @@ background: linear-gradient(to bottom, #243B55, #141E30); /* W3C, IE 10+/ Edge, 
 .nav .boton {
     background-color: #000;
 }
+.btn-carrito {
+    border-radius: 25px;
+}
 .img-logo {
     width: 70px;
 }
