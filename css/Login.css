@@ -8,7 +8,8 @@
 body {
   font-family: "Roboto Condensed";
   margin: 0;
-  background-image: url("img/Fondo.svg");
+  background: -webkit-linear-gradient(to bottom, #fff, #076585);
+  background: linear-gradient(to bottom, #fff, #076585);
 }
 
 .header {
