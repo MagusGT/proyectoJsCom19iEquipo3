@@ -30,30 +30,49 @@ const categorias = [
     imagen: "imagenes/televisores.jfif",
   },
 ];
-// let cambio = 0;
+let cambio = 0;
+let inicio = 0;
+let final = 0;
+let i = 0;
 
-// const boton1 = document.querySelector("#boton");
+const boton1 = document.querySelector("#boton1");
 
-// boton1.addEventListener("click", (cambio = 0));
+boton1.addEventListener("click", function () {
+  cambio = 0;
+  cambiar();
+});
 
-// const boton2 = document.querySelector("#boton");
+const boton2 = document.querySelector("#boton2");
 
-// boton2.addEventListener("click", (cambio = 1));
-const listadocategorias = document.querySelector("#categ");
+boton2.addEventListener("click", function () {
+  cambio = 1;
+  cambiar();
+});
 
-listadocategorias.innerHTML = "";
+function cambiar() {
+  const listadocategorias = document.querySelector("#categ");
 
-categorias.forEach((categoria) => {
-  // if (cambio == 0) {
-  const html = `<img src=" ${categoria.imagen} " class="card-img-top" alt="..." />
+  listadocategorias.innerHTML = "";
+
+  if (cambio == 0) {
+    inicio = 0;
+    final = 2;
+  } else {
+    inicio = 3;
+    final = 5;
+  }
+  console.log(cambio);
+
+  for (i = inicio; i <= final; i++) {
+    const html = `<a href="">
+              <img src="${categorias[i].imagen}" class="card-img-top" alt="..." />
+            </a>
           <div class="card-body">
-            <h5 class="">${categoria.descrip}</h5>
+            <h5 class="">${categorias[i].descrip}</h5>
           </div>
         </div>`;
-  // } else {
-  // }
-  // if ((index = 3)) {
-  //   index = 5;
 
-  listadocategorias.innerHTML += html;
-});
+    listadocategorias.innerHTML += html;
+  }
+}
+cambiar();
