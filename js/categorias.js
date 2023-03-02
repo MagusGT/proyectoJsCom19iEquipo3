@@ -30,41 +30,30 @@ const categorias = [
     imagen: "imagenes/televisores.jfif",
   },
 ];
-let cambio = 0;
+// let cambio = 0;
 
-const boton1 = document.querySelector("#boton");
-boton1.innerHTML = "";
+// const boton1 = document.querySelector("#boton");
 
-`<button type="button" class="btn btn-outline-info">
-  ${onclick((cambio = 0))}
-  <img src="/imagenes/flecha.webp" /></button>;`;
-innerHTML;
+// boton1.addEventListener("click", (cambio = 0));
 
-const boton2 = document.querySelector("#boton");
-boton2.innerHTML = "";
+// const boton2 = document.querySelector("#boton");
 
-`<button type="button" class="btn btn-outline-info">
-  ${onclick((cambio = 1))}
-  <img src="/imagenes/flecha.webp" /></button>;`;
-innerHTML;
+// boton2.addEventListener("click", (cambio = 1));
+const listadocategorias = document.querySelector("#categ");
 
-const mycarousel = document.querySelector("#categ");
+listadocategorias.innerHTML = "";
 
-mycarousel.innerHTML = "";
-
-categorias.forEach((Categorias, index) => {
-  // const html = ;
-
-  if (cambio == 0) {
-    `<img src=" ${categorias.imagen} " class="card-img-top" alt="..." />
+categorias.forEach((categoria) => {
+  // if (cambio == 0) {
+  const html = `<img src=" ${categoria.imagen} " class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="${categorias.descrip}">Card title</h5>
+            <h5 class="">${categoria.descrip}</h5>
           </div>
         </div>`;
-  } else {
-  }
-  if ((index = 3)) {
-    index = 5;
-  }
-  mycarousel.innerHTML += html;
+  // } else {
+  // }
+  // if ((index = 3)) {
+  //   index = 5;
+
+  listadocategorias.innerHTML += html;
 });
