@@ -21,9 +21,7 @@ body {
   animation: rotate 6s infinite alternate linear;
 }
 .header {
-  background: #141e30;
-  background: -webkit-linear-gradient(to bottom, #243b55, #141e30);
-  background: linear-gradient(to bottom, #243b55, #141e30);
+  background: #343a40;
 }
 
 .nav-link {
@@ -44,6 +42,11 @@ body {
 }
 .texto-uno {
   color: black;
+}
+
+.text-modal,
+.modal-title {
+  color: #000;
 }
 
 .card {

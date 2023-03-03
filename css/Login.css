@@ -13,9 +13,7 @@ body {
 }
 
 .header {
-  background: #141e30;
-  background: -webkit-linear-gradient(to bottom, #243b55, #141e30);
-  background: linear-gradient(to bottom, #243b55, #141e30);
+  background: #343a40;
 }
 
 .nav-link {
@@ -55,7 +53,7 @@ body {
 a:link {
   text-decoration: none;
 }
-p {
+.texto-registro {
   font-size: 1rem;
   text-align: center;
 }
@@ -196,7 +194,7 @@ p {
 }
 
 footer {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .pie-pagina {

@@ -12,9 +12,7 @@ body {
   background: linear-gradient(to bottom, #fff, #076585);
 }
 .header {
-  background: #141e30;
-  background: -webkit-linear-gradient(to bottom, #243b55, #141e30);
-  background: linear-gradient(to bottom, #243b55, #141e30);
+  background: #343a40;
 }
 
 .nav-link {
@@ -89,7 +87,8 @@ body {
   margin: 16px 0;
   font-size: 16px;
 }
-.btn {
+
+.send {
   margin-top: 1rem;
 }
 

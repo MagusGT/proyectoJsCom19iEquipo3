@@ -71,14 +71,14 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <a href="Login.html" class="btn btn-light me-2 btn-login"
+              <a href="Login.html" class="btn btn-light me-2 btn-login login"
                 >Iniciar Sesion</a
               >
               <a href="/Registro.html" class="btn btn-outline-light me-3"
                 >Suscribirse</a
               >
               <button
-                class="btn btn-outline-warning btn-carrito"
+                class="btn btn-outline-light btn-carrito"
                 data-bs-toggle="modal"
                 data-bs-target="#carritoCompras"
                 type="button"
@@ -90,6 +90,39 @@
         </div>
       </nav>
     </header>
+    <div class="modal me-0" id="carritoCompras">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title">Carrito de compras</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Productos a cargar.</p>
+          </div>
+          <div class="modal-body">
+            <p>Total de productos.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Continuar con la compra
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="text-center m-2">
       <section class="form-register text-center">
         <h4>Formulario de Registro</h4>
@@ -121,7 +154,7 @@
           <input type="checkbox" /> Estoy de acuerdo con los terminos y
           condiciones
         </p>
-        <button type="submit" class="btn btn-success">Registrarme</button>
+        <button type="submit" class="btn btn-success send">Registrarme</button>
         <p><a href="/Login.html">Ya tengo Cuenta</a></p>
       </section>
     </div>

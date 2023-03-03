@@ -79,7 +79,7 @@
                 >Suscribirse</a
               >
               <button
-                class="btn btn-outline-warning btn-carrito"
+                class="btn btn-outline-light btn-carrito"
                 data-bs-toggle="modal"
                 data-bs-target="#carritoCompras"
                 type="button"
@@ -91,6 +91,39 @@
         </div>
       </nav>
     </header>
+    <div class="modal me-0" id="carritoCompras">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-warning">
+            <h5 class="modal-title">Carrito de compras</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-modal">Productos a cargar.</p>
+          </div>
+          <div class="modal-body">
+            <p class="text-modal">Total de productos.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary">
+              Continuar con la compra
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <h2 class="text-center texto-uno">Acerca De</h2>
     <div class="row justify-content-center m-2 gap-3 gx-0">
       <div class="card border-0">
@@ -128,21 +161,6 @@
         <div class="front container-fluid row gx-0 text-center">
           <img src="/img/Nosotros.png" alt="" />
           <h5>Lucas Gonzalez</h5>
-        </div>
-        <div class="back text-center row gx-0">
-          <h4>Hola</h4>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
-            enim consequuntur, officiis fugit eaque, quas sint ipsum assumenda
-            unde cupiditate temporibus similique minus culpa magnam id maiores
-            sed molestias inventore.
-          </p>
-        </div>
-      </div>
-      <div class="card border-0">
-        <div class="front container-fluid row gx-0 text-center">
-          <img src="/img/Nosotros.png" alt="" />
-          <h5>Agustin Diaz</h5>
         </div>
         <div class="back text-center row gx-0">
           <h4>Hola</h4>
