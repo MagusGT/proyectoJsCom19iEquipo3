@@ -64,7 +64,8 @@ function cambiar() {
   console.log(cambio);
 
   for (i = inicio; i <= final; i++) {
-    const html = `<a href="">
+    const html = `<div >
+    <a href="">
               <img src="${categorias[i].imagen}" class="card-img-top" alt="..." />
             </a>
           <div class="card-body">
