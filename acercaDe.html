@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/acercaDe.css" />
+    <link rel="shortcut icon" href="/img/Rolling.png" type="image/x-icon" />
+    <title>Acerca de</title>
+  </head>
+  <body>
+    <header class="container-fluid header">
+      <!-- Navbar con logo, enlaces inicio, acreca de, y productos. Tambien los botones con login, registro y carrito de compras -->
+      <nav class="navbar navbar-expand-md navbar-dark shadow-md">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html"
+            ><img src="/img/logoElectro-3.png" alt="" class="img-logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/acercade.html">Acerca de</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categorias
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">Electrodomésticos</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Climatización</a></li>
+                  <li><a class="dropdown-item" href="#">Tv & Audio</a></li>
+                  <li><a class="dropdown-item" href="#">Computación</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <a href="Login.html" class="btn btn-light me-2 btn-login"
+                >Iniciar Sesion</a
+              >
+              <a href="/Registro.html" class="btn btn-outline-light me-3"
+                >Suscribirse</a
+              >
+              <button
+                class="btn btn-outline-warning btn-carrito"
+                data-bs-toggle="modal"
+                data-bs-target="#carritoCompras"
+                type="button"
+              >
+                <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h2 class="text-center texto-uno">Acerca De</h2>
+    <div class="row justify-content-center m-2 gap-3 gx-0">
+      <div class="card border-0">
+        <div class="front container-fluid row gx-0 text-center">
+          <img src="/img/Nosotros.png" alt="" />
+          <h5>Nelson Vargas</h5>
+        </div>
+        <div class="back text-center row gx-0">
+          <h4>Hola</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+            enim consequuntur, officiis fugit eaque, quas sint ipsum assumenda
+            unde cupiditate temporibus similique minus culpa magnam id maiores
+            sed molestias inventore.
+          </p>
+        </div>
+      </div>
+
+      <div class="card border-0">
+        <div class="front container-fluid row gx-0 text-center">
+          <img src="/img/Nosotros.png" alt="" />
+          <h5>Humberto Gallo</h5>
+        </div>
+        <div class="back text-center row gx-0">
+          <h4>Hola</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+            enim consequuntur, officiis fugit eaque, quas sint ipsum assumenda
+            unde cupiditate temporibus similique minus culpa magnam id maiores
+            sed molestias inventore.
+          </p>
+        </div>
+      </div>
+      <div class="card border-0">
+        <div class="front container-fluid row gx-0 text-center">
+          <img src="/img/Nosotros.png" alt="" />
+          <h5>Lucas Gonzalez</h5>
+        </div>
+        <div class="back text-center row gx-0">
+          <h4>Hola</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+            enim consequuntur, officiis fugit eaque, quas sint ipsum assumenda
+            unde cupiditate temporibus similique minus culpa magnam id maiores
+            sed molestias inventore.
+          </p>
+        </div>
+      </div>
+      <div class="card border-0">
+        <div class="front container-fluid row gx-0 text-center">
+          <img src="/img/Nosotros.png" alt="" />
+          <h5>Agustin Diaz</h5>
+        </div>
+        <div class="back text-center row gx-0">
+          <h4>Hola</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+            enim consequuntur, officiis fugit eaque, quas sint ipsum assumenda
+            unde cupiditate temporibus similique minus culpa magnam id maiores
+            sed molestias inventore.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="img/logoElectro-3.png" alt="Logo de SLee Dw" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?
+          </p>
+        </div>
+        <div class="box">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href=""><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <p>@rollingCodeSchool</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b9fc303ebe.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
