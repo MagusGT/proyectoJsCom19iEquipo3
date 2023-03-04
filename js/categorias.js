@@ -64,14 +64,16 @@ function cambiar() {
   console.log(cambio);
 
   for (i = inicio; i <= final; i++) {
-    const html = `<div >
+    const html = `<div>
+    
     <a href="">
-              <img src="${categorias[i].imagen}" class="card-img-top" alt="..." />
+              <img src="${categorias[i].imagen}" class="card-img-top height=50px" alt="..." />
             </a>
-          <div class="card-body">
+          <div class="card-body text-center">
             <h5 class="">${categorias[i].descrip}</h5>
           </div>
-        </div>`;
+          </div>
+          `;
 
     listadocategorias.innerHTML += html;
   }
