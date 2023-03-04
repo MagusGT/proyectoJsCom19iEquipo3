@@ -19,3 +19,14 @@
   margin: 0%;
   padding: 0%;
 }
+
+.categselec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagselec {
+  height: 150px;
+  width: 150px;
+}
