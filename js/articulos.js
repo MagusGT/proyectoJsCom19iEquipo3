@@ -658,9 +658,34 @@ articulosCocina.map((producto) => {
      `;
   listadoProductosCocina.innerHTML += html;
 });
-// console.log(articulosClimatizacion);
-// console.log(articulosPequenos);
-// console.log(articulosCocina);
-// console.log(articulosRefrigeracion);
-// console.log(articulosTelevisores);
-// console.log(articulosLavarropas);
+// agregar al localStorage los arrays de objetos
+//cuando haga el login se guardará en el local storage los array de objetos
+//si es el administrador ingresará a su perfil, y si están cargados los arrays podrá cargar nuevos productos a los arrays...
+//El carrito de compras se cargará desde el local storage
+
+const btnLogin = document.querySelector("#btnLogin");
+btnLogin.addEventListener("click", (event) => {
+  event.preventDefault();
+  localStorage.setItem("articulosPequenos", JSON.stringify(articulosPequenos));
+  localStorage.setItem(
+    "articulosRefrigeracion",
+    JSON.stringify(articulosRefrigeracion)
+  );
+  localStorage.setItem(
+    "articulosTelevisores",
+    JSON.stringify(articulosTelevisores)
+  );
+  localStorage.setItem(
+    "articulosClimatizacion",
+    JSON.stringify(articulosClimatizacion)
+  );
+  localStorage.setItem(
+    "articulosCocina",
+    JSON.stringify(articulosClimatizacion)
+  );
+  localStorage.setItem(
+    "articulosLavarropas",
+    JSON.stringify(articulosLavarropas)
+  );
+  window.location.href = "Login.html";
+});
