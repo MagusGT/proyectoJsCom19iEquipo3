@@ -488,40 +488,47 @@ const productos = [
 const categorias = [
   {
     orden: 1,
-    descrip: "CLIMATIZACION",
+    descrip: "Climatización",
     imagen: "imagenes/aire3.webp",
   },
   {
     orden: 2,
-    descrip: "PEQUEÑOS ELECTRO",
+    descrip: "Pequeños",
     imagen: "imagenes/pequenos.jfif",
   },
   {
     orden: 3,
-    descrip: "COCINAS",
+    descrip: "Cocinas",
     imagen: "imagenes/cocinas.jfif",
   },
   {
     orden: 4,
-    descrip: "REFRIGERACION",
+    descrip: "Refrigeracion",
     imagen: "imagenes/refrigeracion.jfif",
   },
   {
     orden: 5,
-    descrip: "LAVARROPAS",
+    descrip: "Lavarropas",
     imagen: "imagenes/lavarropas.jfif",
   },
   {
     orden: 6,
-    descrip: "TELEVISORES",
+    descrip: "Televisores",
     imagen: "imagenes/televisores.jfif",
   },
 ];
+// enviar al local storage los productos
+const localData = JSON.parse(localStorage.getItem("productos"));
+let producto = localData || productos;
+const json = JSON.stringify(producto);
+localStorage.setItem("producto", json);
 
+// declaracion de variables
+let listadofiltrado;
+let categoriaSeleccionada = "CLIMATIZACION";
 let cambio = 0;
 let inicio = 0;
-let final = 0;
-let i = 0;
+let final = 2;
 
 const boton1 = document.querySelector("#boton1");
 // dar funcionalidad a los botones de carrousel
@@ -544,7 +551,7 @@ boton2.addEventListener("click", function () {
   }
   cambiar();
 });
-
+// definir las categorias a mostrar
 function cambiar() {
   const listadocategorias = document.querySelector("#categ");
 
@@ -557,7 +564,6 @@ function cambiar() {
     inicio = 3;
     final = 5;
   }
-  console.log(cambio);
 
   //Obtener todo lo de la URL después del ?
   const queryString = window.location.search;
@@ -565,13 +571,11 @@ function cambiar() {
   const urlParams = new URLSearchParams(queryString);
   //Toma solamente el parámetro categoria, si no le pasamos ese param, retorna null (mostrar todas las categorías)
   const categoria = urlParams.get("categoria");
-  console.log(categoria);
 
   //Dar valor inicial a la categoria seleccionada
   let categoriaSeleccionada = categoria || "TODAS";
-  console.log(categoriaSeleccionada);
 
-  for (i = inicio; i <= final; i++) {
+  for (let i = inicio; i <= final; i++) {
     const html = `<div>
     
     <a class="categselec" href=/productos.html?categoria=${categorias[i].descrip}>
@@ -585,5 +589,82 @@ function cambiar() {
 
     listadocategorias.innerHTML += html;
   }
+  let listadofiltrado = localStorage.getItem("producto");
+  // Se parsea para poder ser usado en js con JSON.parse :)
+  listadofiltrado = JSON.parse(listadofiltrado);
+
+  const listadoProductos = document.querySelector("#listado-productos");
+
+  listadoProductos.innerHTML = "";
+
+  let nuevoListado = listadofiltrado.filter((elemento) => {
+    return (
+      elemento.categoria === categoriaSeleccionada ||
+      categoriaSeleccionada === "TODAS"
+    );
+  });
+
+  nuevoListado.forEach((producto) => {
+    const html = `
+          <div class="col-12 col-md-4">
+            <div class="card mb-3">
+              <img
+                src="${producto.imagen}"
+                class="card-img-top"
+                alt="${producto.nombre}"
+              />
+              <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="card-text">${producto.marca}</p>
+                <p class="card-text">$ ${producto.precio}</p>
+                <p class="card-text"> codigo ${producto.codigo}</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${producto.codigo}">
+                  Detalle
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal-${producto.codigo}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">${producto.nombre}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img
+                  src="${producto.imagen}"
+                  class="card-img-top"
+                  alt="${producto.nombre}"
+                  />
+                  
+                  <h5 class="card-title">${producto.nombre}</h5>
+                  <p class="card-text">${producto.marca}</p>
+                  <p class="card-text">$ ${producto.precio}</p>
+                  <p class="card-text"> codigo ${producto.codigo}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" onclick="agregarProducto(${producto.codigo})">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      `;
+
+    listadoProductos.innerHTML += html;
+  });
 }
+
+function agregarProducto(codigo) {
+  // enviar al local storage el carrito
+  const localDataCarrito = JSON.parse(localStorage.getItem("carrito"));
+  let carrito = localDataCarrito || [];
+  carrito.push(codigo);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
 cambiar();
