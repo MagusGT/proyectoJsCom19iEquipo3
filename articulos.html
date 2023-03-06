@@ -68,11 +68,9 @@
             </ul>
             <form class="d-flex" role="search">
               <a href="#" class="btn btn-light me-2 btn-login" id="btnLogin"
-                >Iniciar Sesion</a
+                >Cerrar Sesion</a
               >
-              <a href="/Registro.html" class="btn btn-outline-light me-3"
-                >Suscribirse</a
-              >
+
               <button
                 class="btn btn-outline-warning btn-carrito"
                 data-bs-toggle="modal"
@@ -82,6 +80,39 @@
                 <i class="fa-solid fa-cart-shopping"></i>
               </button>
             </form>
+            <div class="modal me-0" id="carritoCompras">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-warning">
+                    <h5 class="modal-title">Carrito de compras</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Productos a cargar.</p>
+                  </div>
+                  <div class="modal-body">
+                    <p>Total de productos.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Continuar con la compra
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -119,5 +150,9 @@
     ></script>
 
     <script src="/js/articulos.js"></script>
+    <script
+      src="https://kit.fontawesome.com/b9fc303ebe.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

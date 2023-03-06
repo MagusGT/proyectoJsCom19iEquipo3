@@ -8,6 +8,7 @@ const adminUser = {
   email: "admin@admin.com",
   password: "12345",
 };
+const usuarioEmpresa = JSON.parse(localStorage.getItem("usuarioEmpresa"));
 
 registro.addEventListener("click", (e) => {
   e.preventDefault();
@@ -17,7 +18,12 @@ registro.addEventListener("click", (e) => {
   ) {
     localStorage.setItem("token", JSON.stringify(localToken));
     window.location.href = "productos.html";
+  } else if (
+    email.value === usuarioEmpresa.email &&
+    password.value === usuarioEmpresa.password
+  ) {
+    window.location.href = "articulos.html";
   } else {
-    alert("Ingrese un usuario admin");
+    alert("Debe suscribirse de nuevo");
   }
 });
