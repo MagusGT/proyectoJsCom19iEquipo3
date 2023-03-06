@@ -19,7 +19,6 @@
   </head>
   <body>
     <header class="container-fluid header">
-      <!-- Navbar con logo, enlaces inicio, acreca de, y productos. Tambien los botones con login, registro y carrito de compras -->
       <nav class="navbar navbar-expand-md navbar-dark shadow-md">
         <div class="container">
           <a class="navbar-brand" href="/index.html"
@@ -103,10 +102,10 @@
             ></button>
           </div>
           <div class="modal-body">
-            <p>Productos a cargar.</p>
+            <p class="text-modal">Productos a cargar.</p>
           </div>
           <div class="modal-body">
-            <p>Total de productos.</p>
+            <p class="text-modal">Total de productos.</p>
           </div>
           <div class="modal-footer">
             <button
@@ -126,7 +125,7 @@
     <div class="contenedor">
       <div class="card-uno">
         <div class="contenedor-label">
-          <p class="texto-registro">Haz click aqui para registrarte</p>
+          <p>Haz click aqui para registrarte</p>
           <i class="bi bi-chevron-double-down flecha"></i>
           <a href="/Registro.html" class="link"> REGISTRARME </a>
         </div>
@@ -159,7 +158,7 @@
               <a href="#" class="link2">Olvide mi Contraseña</a>
             </div>
 
-            <button type="submit">Entrar</button>
+            <button type="submit" id="loginForm">Entrar</button>
           </form>
         </div>
       </div>
@@ -205,5 +204,6 @@
       src="https://kit.fontawesome.com/b9fc303ebe.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/login.js" type="module"></script>
   </body>
 </html>

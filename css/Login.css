@@ -50,10 +50,13 @@ body {
   color: white;
   text-align: center;
 }
+.text-modal {
+  text-align: start;
+}
 a:link {
   text-decoration: none;
 }
-.texto-registro {
+p {
   font-size: 1rem;
   text-align: center;
 }
@@ -194,7 +197,7 @@ a:link {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .pie-pagina {

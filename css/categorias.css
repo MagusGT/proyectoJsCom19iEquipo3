@@ -1,24 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 
 * {
-  font-family: "Roboto Condensed";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  display: grid;
-  place-items: center;
-  font-family: "Roboto Condensed";
-  margin: 0;
-  background: -webkit-linear-gradient(to bottom, #fff, #076585);
-  background: linear-gradient(to bottom, #fff, #076585);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  color: #000;
-  animation: rotate 6s infinite alternate linear;
+  font-family: "Roboto Condensed", sans-serif;
+  background: rgb(7, 101, 133);
+  background: linear-gradient(
+    0deg,
+    rgba(7, 101, 133, 1) 0%,
+    rgba(186, 213, 221, 1) 95%,
+    rgba(200, 221, 228, 1) 100%
+  );
 }
 .header {
   background: #343a40;
@@ -40,66 +35,48 @@ body {
 .img-logo {
   width: 70px;
 }
-.texto-uno {
-  color: black;
+.cards {
+  gap: 20px;
 }
 
-.card {
-  position: relative;
-  width: 15rem;
-  height: 350px;
-  margin: 1rem;
-  background: transparent;
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    width: 100vw;
+    gap: 5px;
+  }
 }
 
-.card div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.categorias {
+  display: flex;
+
+  justify-content: space-between;
+  /* width: 100%; */
+}
+.flecha {
+  width: 30px;
+}
+.tarjeta {
+  display: flex;
+  justify-content: space-evenly;
+  width: 33%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.categselec {
   display: flex;
   align-items: center;
   justify-content: center;
-  backface-visibility: hidden;
-  transition: 1s;
 }
 
-.card .front {
-  background: #073447;
-  transform: perspective(500px) rotateY(0deg);
-  border-radius: 5px;
+.imagselec {
+  height: 150px;
+  width: 150px;
 }
 
-.card .back {
-  background: #073447;
-  transform: perspective(500px) rotateY(180deg);
-  border-radius: 5px;
-}
-
-.card:hover .front {
-  transform: perspective(500px) rotateY(180deg);
-  border: 0;
-}
-
-.card:hover .back {
-  transform: perspective(500px) rotateY(360deg);
-}
-
-.card div h1 {
-  font-size: 100px;
-  color: #f1f1f1;
-}
-img {
-  width: 2rem;
-}
-.text-modal {
-  color: #000;
-}
-
-h4,
-h5,
-p,
-h2 {
-  color: white;
+footer {
+  margin-top: 2rem;
 }
 
 .pie-pagina {

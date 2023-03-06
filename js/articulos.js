@@ -481,6 +481,11 @@ const productos = [
     descripcion: "De pie de 20 Pulgadas",
   },
 ];
+const localData = JSON.parse(localStorage.getItem("productos"));
+let producto = localData || [];
+producto.push(productos);
+const json = JSON.stringify(producto);
+localStorage.setItem("producto", json);
 
 const listadoProductos = document.querySelector("#listado-productos");
 
