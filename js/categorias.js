@@ -1,3 +1,5 @@
+// carga inicial de productos
+
 const productos = [
   {
     codigo: 01,
@@ -482,210 +484,192 @@ const productos = [
   },
 ];
 
-const listadoProductosPequenos = document.querySelector(
-  "#listadoProductosPequenos"
-);
-const listadoProductosClimatizacion = document.querySelector(
-  "#listadoProductosClimatizacion"
-);
-const listadoProductosLavarropas = document.querySelector(
-  "#listadoProductosLavarropas"
-);
-const listadoProductosRefrigeracion = document.querySelector(
-  "#listadoProductosRefrigeracion"
-);
-const listadoProductosTelevisores = document.querySelector(
-  "#listadoProductosTelevisores"
-);
-const listadoProductosCocina = document.querySelector(
-  "#listadoProductosCocina"
-);
-const articulosPequenos = [];
-const articulosRefrigeracion = [];
-const articulosTelevisores = [];
-const articulosClimatizacion = [];
-const articulosCocina = [];
-const articulosLavarropas = [];
+// carga de categorias
+const categorias = [
+  {
+    orden: 1,
+    descrip: "Climatización",
+    imagen: "imagenes/aire3.webp",
+  },
+  {
+    orden: 2,
+    descrip: "Pequeños",
+    imagen: "imagenes/pequenos.jfif",
+  },
+  {
+    orden: 3,
+    descrip: "Cocinas",
+    imagen: "imagenes/cocinas.jfif",
+  },
+  {
+    orden: 4,
+    descrip: "Refrigeracion",
+    imagen: "imagenes/refrigeracion.jfif",
+  },
+  {
+    orden: 5,
+    descrip: "Lavarropas",
+    imagen: "imagenes/lavarropas.jfif",
+  },
+  {
+    orden: 6,
+    descrip: "Televisores",
+    imagen: "imagenes/televisores.jfif",
+  },
+];
+// enviar al local storage los productos
+const localData = JSON.parse(localStorage.getItem("productos"));
+let producto = localData || productos;
+const json = JSON.stringify(producto);
+localStorage.setItem("producto", json);
 
-listadoProductosPequenos.innerHTML = "";
-listadoProductosClimatizacion.innerHTML = "";
-listadoProductosLavarropas.innerHTML = "";
-listadoProductosRefrigeracion.innerHTML = "";
-listadoProductosTelevisores.innerHTML = "";
-listadoProductosCocina.innerHTML = "";
-// agregar condicionales para agregarpor categoría
-productos.map((producto) => {
-  if (producto.categoria == "Climatización") {
-    articulosClimatizacion.push(producto);
-  } else if (producto.categoria == "Pequeños") {
-    articulosPequenos.push(producto);
-  } else if (producto.categoria == "Cocinas") {
-    articulosCocina.push(producto);
-  } else if (producto.categoria == "Refrigeracion") {
-    articulosRefrigeracion.push(producto);
-  } else if (producto.categoria == "Lavarropas") {
-    articulosLavarropas.push(producto);
+// declaracion de variables
+let listadofiltrado;
+let categoriaSeleccionada = "CLIMATIZACION";
+let cambio = 0;
+let inicio = 0;
+let final = 2;
+
+const boton1 = document.querySelector("#boton1");
+// dar funcionalidad a los botones de carrousel
+boton1.addEventListener("click", function () {
+  if (cambio == 0) {
+    cambio = 1;
   } else {
-    articulosTelevisores.push(producto);
+    cambio = 0;
+  }
+  cambiar();
+});
+
+const boton2 = document.querySelector("#boton2");
+
+boton2.addEventListener("click", function () {
+  if (cambio == 0) {
+    cambio = 1;
+  } else {
+    cambio = 0;
+  }
+  cambiar();
+});
+// definir las categorias a mostrar
+function cambiar() {
+  const listadocategorias = document.querySelector("#categ");
+
+  listadocategorias.innerHTML = "";
+
+  if (cambio == 0) {
+    inicio = 0;
+    final = 2;
+  } else {
+    inicio = 3;
+    final = 5;
   }
 
-  // categoría climatización (hacer un filter donde dice cimatizacion)
-});
+  //Obtener todo lo de la URL después del ?
+  const queryString = window.location.search;
+  //Arma un objeto con todos los parámetros de la URL todo lo que tiene un =
+  const urlParams = new URLSearchParams(queryString);
+  //Toma solamente el parámetro categoria, si no le pasamos ese param, retorna null (mostrar todas las categorías)
+  const categoria = urlParams.get("categoria");
 
-articulosPequenos.map((producto) => {
-  html = `
-         <div class="col-12 col-md-4">
-           <div class="card mb-3">
-             <img
-               src="${producto.imagen}"
-               class="card-img-top"
-               alt="${producto.nombre}"
-             />
-             <div class="card-body">
-               <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">${producto.marca}</p>
-               <p class="card-text">$ ${producto.precio}</p>
-               <p class="card-text"> codigo ${producto.codigo}</p>
-               <a href="#" class="btn btn-primary float-end" onclick="agregarProducto(${producto.id})">Detalle</a>
-             </div>
-           </div>
-         </div>
-     `;
-  listadoProductosPequenos.innerHTML += html;
-});
-articulosRefrigeracion.map((producto) => {
-  html = `
-         <div class="col-12 col-md-4">
-           <div class="card mb-3">
-             <img
-               src="${producto.imagen}"
-               class="card-img-top"
-               alt="${producto.nombre}"
-             />
-             <div class="card-body">
-               <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">${producto.marca}</p>
-               <p class="card-text">$ ${producto.precio}</p>
-               <p class="card-text"> codigo ${producto.codigo}</p>
-               <a href="#" class="btn btn-primary float-end" onclick="agregarProducto(${producto.id})">Detalle</a>
-             </div>
-           </div>
-         </div>
-     `;
-  listadoProductosRefrigeracion.innerHTML += html;
-});
-articulosClimatizacion.map((producto) => {
-  html = `
-         <div class="col-12 col-md-4">
-           <div class="card mb-3">
-             <img
-               src="${producto.imagen}"
-               class="card-img-top"
-               alt="${producto.nombre}"
-             />
-             <div class="card-body">
-               <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">${producto.marca}</p>
-               <p class="card-text">$ ${producto.precio}</p>
-               <p class="card-text"> codigo ${producto.codigo}</p>
-               <a href="#" class="btn btn-primary float-end" onclick="agregarProducto(${producto.id})">Detalle</a>
-             </div>
-           </div>
-         </div>
-     `;
-  listadoProductosClimatizacion.innerHTML += html;
-});
-articulosLavarropas.map((producto) => {
-  html = `
-         <div class="col-12 col-md-4">
-           <div class="card mb-3">
-             <img
-               src="${producto.imagen}"
-               class="card-img-top"
-               alt="${producto.nombre}"
-             />
-             <div class="card-body">
-               <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">${producto.marca}</p>
-               <p class="card-text">$ ${producto.precio}</p>
-               <p class="card-text"> codigo ${producto.codigo}</p>
-               <a href="#" class="btn btn-primary float-end" onclick="agregarProducto(${producto.id})">Detalle</a>
-             </div>
-           </div>
-         </div>
-     `;
-  listadoProductosLavarropas.innerHTML += html;
-});
-articulosTelevisores.map((producto) => {
-  html = `
-         <div class="col-12 col-md-4">
-           <div class="card mb-3">
-             <img
-               src="${producto.imagen}"
-               class="card-img-top"
-               alt="${producto.nombre}"
-             />
-             <div class="card-body">
-               <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">${producto.marca}</p>
-               <p class="card-text">$ ${producto.precio}</p>
-               <p class="card-text"> codigo ${producto.codigo}</p>
-               <a href="#" class="btn btn-primary float-end" onclick="agregarProducto(${producto.id})">Detalle</a>
-             </div>
-           </div>
-         </div>
-     `;
-  listadoProductosTelevisores.innerHTML += html;
-});
-articulosCocina.map((producto) => {
-  html = `
-         <div class="col-12 col-md-4">
-           <div class="card mb-3">
-             <img
-               src="${producto.imagen}"
-               class="card-img-top"
-               alt="${producto.nombre}"
-             />
-             <div class="card-body">
-               <h5 class="card-title">${producto.nombre}</h5>
-               <p class="card-text">${producto.marca}</p>
-               <p class="card-text">$ ${producto.precio}</p>
-               <p class="card-text"> codigo ${producto.codigo}</p>
-               <a href="#" class="btn btn-primary float-end" onclick="agregarProducto(${producto.id})">Detalle</a>
-             </div>
-           </div>
-         </div>
-     `;
-  listadoProductosCocina.innerHTML += html;
-});
-// agregar al localStorage los arrays de objetos
-//cuando haga el login se guardará en el local storage los array de objetos
-//si es el administrador ingresará a su perfil, y si están cargados los arrays podrá cargar nuevos productos a los arrays...
-//El carrito de compras se cargará desde el local storage
+  //Dar valor inicial a la categoria seleccionada
+  let categoriaSeleccionada = categoria || "TODAS";
 
-const btnLogin = document.querySelector("#btnLogin");
-btnLogin.addEventListener("click", (event) => {
-  event.preventDefault();
-  localStorage.setItem("articulosPequenos", JSON.stringify(articulosPequenos));
-  localStorage.setItem(
-    "articulosRefrigeracion",
-    JSON.stringify(articulosRefrigeracion)
-  );
-  localStorage.setItem(
-    "articulosTelevisores",
-    JSON.stringify(articulosTelevisores)
-  );
-  localStorage.setItem(
-    "articulosClimatizacion",
-    JSON.stringify(articulosClimatizacion)
-  );
-  localStorage.setItem(
-    "articulosCocina",
-    JSON.stringify(articulosClimatizacion)
-  );
-  localStorage.setItem(
-    "articulosLavarropas",
-    JSON.stringify(articulosLavarropas)
-  );
-  window.location.href = "Login.html";
+  for (let i = inicio; i <= final; i++) {
+    const html = `<div>
+    
+    <a class="categselec" href=/productos.html?categoria=${categorias[i].descrip}>
+              <img class="imagselec" src="${categorias[i].imagen}"  />
+            </a>
+          <div class="card-body text-center">
+            <h5 class="">${categorias[i].descrip}</h5>
+          </div>
+          </div>
+          `;
+
+    listadocategorias.innerHTML += html;
+  }
+  let listadofiltrado = localStorage.getItem("producto");
+  // Se parsea para poder ser usado en js con JSON.parse :)
+  listadofiltrado = JSON.parse(listadofiltrado);
+
+  const listadoProductos = document.querySelector("#listado-productos");
+
+  listadoProductos.innerHTML = "";
+
+  let nuevoListado = listadofiltrado.filter((elemento) => {
+    return (
+      elemento.categoria === categoriaSeleccionada ||
+      categoriaSeleccionada === "TODAS"
+    );
+  });
+
+  nuevoListado.forEach((producto) => {
+    const html = `
+          <div class="col-12 col-md-4">
+            <div class="card mb-3">
+              <img
+                src="${producto.imagen}"
+                class="card-img-top"
+                alt="${producto.nombre}"
+              />
+              <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="card-text">${producto.marca}</p>
+                <p class="card-text">$ ${producto.precio}</p>
+                <p class="card-text"> codigo ${producto.codigo}</p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-${producto.codigo}">
+                  Detalle
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal-${producto.codigo}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">${producto.nombre}</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img
+                  src="${producto.imagen}"
+                  class="card-img-top"
+                  alt="${producto.nombre}"
+                  />
+                  
+                  <h5 class="card-title">${producto.nombre}</h5>
+                  <p class="card-text">${producto.marca}</p>
+                  <p class="card-text">$ ${producto.precio}</p>
+                  <p class="card-text"> codigo ${producto.codigo}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" onclick="agregarProducto(${producto.codigo})">Comprar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      `;
+
+    listadoProductos.innerHTML += html;
+  });
+}
+
+function agregarProducto(codigo) {
+  // enviar al local storage el carrito
+  const localDataCarrito = JSON.parse(localStorage.getItem("carrito"));
+  let carrito = localDataCarrito || [];
+  carrito.push(codigo);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+cambiar();
+
+btnCarrito.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "carrito.html";
 });

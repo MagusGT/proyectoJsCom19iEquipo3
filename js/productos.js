@@ -4,6 +4,7 @@ const inputPrice = document.getElementById("inputPrice");
 const inputImg = document.getElementById("inputImg");
 const tarjetaProducto = document.getElementById("cardProducto");
 const botonEliminar = document.getElementById("buttonEliminar");
+const btnCarrito = document.getElementById("btnCarrito");
 
 const token = JSON.parse(localStorage.getItem("token"));
 const localData = JSON.parse(localStorage.getItem("productos"));
@@ -58,3 +59,8 @@ function eliminarProducto(id) {
   productos = productosFiltrados;
   mostrarProductos();
 }
+
+btnCarrito.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.href = "carrito.html";
+});

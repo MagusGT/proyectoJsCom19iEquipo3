@@ -22,7 +22,7 @@ registro.addEventListener("click", (e) => {
     email.value === usuarioEmpresa.email &&
     password.value === usuarioEmpresa.password
   ) {
-    window.location.href = "articulos.html";
+    window.location.href = "productos.html";
   } else {
     alert("Debe suscribirse de nuevo");
   }

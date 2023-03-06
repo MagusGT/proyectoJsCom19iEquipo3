@@ -29,7 +29,7 @@
       <!-- Navbar con logo, enlaces inicio, acreca de, y productos. Tambien los botones con login, registro y carrito de compras -->
       <nav class="navbar navbar-expand-md navbar-dark shadow-md">
         <div class="container">
-          <a class="navbar-brand" href="/index.html"
+          <a class="navbar-brand" href="#"
             ><img src="/img/logoElectro-3.png" alt="" class="img-logo"
           /></a>
           <button
@@ -75,14 +75,19 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <a href="Login.html" class="btn btn-light me-2 btn-login"
-                >Iniciar Sesion</a
-              >
-              <a href="/Registro.html" class="btn btn-outline-light me-3"
-                >Suscribirse</a
-              >
               <button
-                class="btn btn-outline-warning btn-carrito"
+                class="btn btn-light me-2 btn-login"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#loguearse"
+              >
+                Inciar seción
+              </button>
+              <button class="btn btn-outline-light me-3" type="button">
+                Suscribirse
+              </button>
+              <button
+                class="btn btn-outline-light btn-carrito"
                 data-bs-toggle="modal"
                 data-bs-target="#carritoCompras"
                 type="button"
@@ -94,56 +99,7 @@
         </div>
       </nav>
     </header>
-    <div class="modal" id="loguearse">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <div class="modal-title">
-              <h5>Iniciar sesión</h5>
-            </div>
-            <button class="btn-close" type="button" data-bs-dismiss="modal">
-              &times
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="row mb-3">
-                <label for="usuario" class="col-sm-2 col-form-label"
-                  >Usuario</label
-                >
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="usuario" />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="inputPassword3" class="col-sm-2 col-form-label"
-                  >Contraseña</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="inputPassword3"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <a href="./pageNotFound.html" class="btn btn-primary" type="button"
-              >Login</a
-            >
-            <button
-              class="btn btn-secondary"
-              type="button"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="modal me-0" id="carritoCompras">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -177,7 +133,7 @@
         </div>
       </div>
     </div>
-    <main class="container main main__index">
+    <main class="container main main__index mb-1">
       <div
         id="carouselExampleIndicators"
         class="carousel slide w-100 rounded"
@@ -278,7 +234,11 @@
         </section>
       </section>
     </main>
-
+    <div class="d-grid gap-1 col-6 mx-auto mt-3">
+      <a href="/productos.html" class="btn btn-primary"
+        >Echale un ojo a nuestro catalogo completo</a
+      >
+    </div>
     <footer class="pie-pagina">
       <div class="grupo-1">
         <div class="box">
@@ -321,10 +281,6 @@
     <script
       src="https://kit.fontawesome.com/b9fc303ebe.js"
       crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
   </body>
 </html>
