@@ -647,7 +647,7 @@ function cambiar() {
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary" onclick="agregarProducto(${producto.codigo})">Comprar</button>
+                  <button type="button" class="btn btn-primary" onclick="agregarProducto(${producto.codigo})" data-bs-dismiss="modal">Agregar al carrito</button>
                 </div>
               </div>
             </div>

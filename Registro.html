@@ -14,6 +14,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
+    <link
+      rel="shortcut icon"
+      href="/img/logoElectro-2.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="css/Registro.css" />
     <title>Registro</title>
   </head>
@@ -62,11 +67,47 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a class="dropdown-item" href="#">Electrodomésticos</a>
+                    <a
+                      class="dropdown-item"
+                      href="/productos.html?categoria=Climatización"
+                      >Climatizacion</a
+                    >
                   </li>
-                  <li><a class="dropdown-item" href="#">Climatización</a></li>
-                  <li><a class="dropdown-item" href="#">Tv & Audio</a></li>
-                  <li><a class="dropdown-item" href="#">Computación</a></li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/productos.html?categoria=Pequeños"
+                      >Pequeños</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/productos.html?categoria=Cocinas"
+                      >Cocinas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/productos.html?categoria=Refrigeracion"
+                      >Refrigeracion</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/productos.html?categoria=Lavarropas"
+                      >Lavaropas</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/productos.html?categoria=Televisores"
+                      >Televisores</a
+                    >
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -77,86 +118,58 @@
               <a href="/Registro.html" class="btn btn-outline-light me-3"
                 >Suscribirse</a
               >
-              <button
+              <a
+                href="/carrito.html"
                 class="btn btn-outline-light btn-carrito"
-                data-bs-toggle="modal"
-                data-bs-target="#carritoCompras"
                 type="button"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>
-              </button>
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
             </form>
           </div>
         </div>
       </nav>
     </header>
-    <div class="modal me-0" id="carritoCompras">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header bg-warning">
-            <h5 class="modal-title">Carrito de compras</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p>Productos a cargar.</p>
-          </div>
-          <div class="modal-body">
-            <p>Total de productos.</p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button type="button" class="btn btn-primary">
-              Continuar con la compra
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="text-center m-2">
-      <section class="form-register text-center">
+      <form class="form-register text-center">
         <h4>Formulario de Registro</h4>
         <input
           class="controls text-center"
           type="text"
           id="nombres"
           placeholder="Nombre de usuario"
+          required
         />
         <input
           class="controls text-center"
           type="email"
           id="correo"
           placeholder="Correo electronico"
+          required
         />
         <input
           class="controls text-center"
           type="password"
           id="contraseña"
           placeholder="Contraseña"
+          required
         />
         <input
           class="controls text-center"
           type="password"
           id="contraseña"
           placeholder="Confirme su Contraseña"
+          required
         />
         <p>
-          <input type="checkbox" /> Estoy de acuerdo con los terminos y
+          <input type="checkbox" required /> Estoy de acuerdo con los terminos y
           condiciones
         </p>
-        <button type="submit" class="btn btn-success send">Registrarme</button>
+        <button type="submit" id="" class="btn btn-success send">
+          Registrarme
+        </button>
         <p><a href="/Login.html">Ya tengo Cuenta</a></p>
-      </section>
+      </form>
     </div>
 
     <footer class="pie-pagina">
@@ -169,20 +182,17 @@
           </figure>
         </div>
         <div class="box">
-          <h2>SOBRE NOSOTROS</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?
-          </p>
+          <h2>Atencion al cliente</h2>
+          <p>TEL</p>
+          <p>427-7997</p>
+          <p>(+54) 381-345-6789</p>
         </div>
         <div class="box">
           <h2>SIGUENOS</h2>
           <div class="red-social">
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-twitter"></i></a>
+            <a href="/pageNotFound.html"><i class="bi bi-facebook"></i></a>
+            <a href="/pageNotFound.html"><i class="bi bi-instagram"></i></a>
+            <a href="/pageNotFound.html"><i class="bi bi-twitter"></i></a>
             <a href=""><i class="bi bi-github"></i></a>
           </div>
         </div>
@@ -191,7 +201,7 @@
         <p>@rollingCodeSchool</p>
       </div>
     </footer>
-
+    <script src="/js/registro.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

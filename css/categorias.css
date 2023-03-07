@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Unbounded:wght@300&display=swap");
 
 * {
   margin: 0;
@@ -49,19 +50,23 @@ body {
 
 .categorias {
   display: flex;
-
-  justify-content: space-between;
-  /* width: 100%; */
+  margin-top: 1rem;
+  justify-content: space-evenly;
 }
 .flecha {
-  width: 30px;
+  width: 1rem;
 }
 .tarjeta {
   display: flex;
   justify-content: space-evenly;
-  width: 33%;
-  margin: 0%;
+}
+h1 {
+  font-family: "Unbounded";
+}
+h5 {
+  font-size: 1rem;
   padding: 0%;
+  margin: 0%;
 }
 
 .categselec {
@@ -69,10 +74,38 @@ body {
   align-items: center;
   justify-content: center;
 }
+a.categselec {
+  width: 150px;
+}
 
 .imagselec {
   height: 150px;
   width: 150px;
+  border-radius: 5rem;
+}
+@media (max-width: 576px) {
+  .imagselec {
+    height: 75px;
+    width: 75px;
+  }
+  a.categselec {
+    width: 75px;
+  }
+  .flecha {
+    width: 1rem;
+  }
+}
+@media (max-width: 476px) {
+  .imagselec {
+    height: 60px;
+    width: 60px;
+  }
+  a.categselec {
+    width: 60px;
+  }
+  .flecha {
+    width: 10px;
+  }
 }
 
 footer {
